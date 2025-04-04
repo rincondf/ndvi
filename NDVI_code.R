@@ -3,59 +3,13 @@ mod_y <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "HiR
 summary(mod_y)
 
 
-plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_Hard_SP")], 
-     S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_Hard_SP")], 
-     xlim = c(0, 1),
-     ylim = c(20, 150), xlab = "", ylab = "")
-
-
-points(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "HiRain_Hard_SP")],
-     S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "HiRain_Hard_SP")], col = "red")
-
-abline(a = coef(mod_y)[1], b = coef(mod_y)[3], col  = "red", lwd  = 2)
-abline(a = coef(mod_y)[2] + coef(mod_y)[1], b = coef(mod_y)[3] + coef(mod_y)[4], lwd  = 2)
-
-
 
 mod_y1 <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "HiRain_SWW_SP")
 summary(mod_y1)
 
 
-plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_SWW_SP")], 
-     S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_SWW_SP")], 
-     xlim = c(0, 1),
-     ylim = c(20, 150), xlab = "", ylab = "")
-
-
-points(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "HiRain_SWW_SP")],
-       S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "HiRain_SWW_SP")], col = "red")
-
-abline(a = coef(mod_y1)[1], b = coef(mod_y1)[3], col  = "red", lwd  = 2)
-abline(a = coef(mod_y1)[2] + coef(mod_y1)[1], b = coef(mod_y1)[3] + coef(mod_y1)[4], lwd  = 2)
-
-
-
-
-
-
 mod_y2 <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "Metribuzin_Trial_Spray")
 summary(mod_y2)
-
-
-plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], 
-     S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], 
-     xlim = c(0, 1),
-     ylim = c(20, 150), xlab = "", ylab = "")
-
-
-points(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")],
-       S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], col = "red")
-
-abline(a = coef(mod_y2)[1], b = coef(mod_y2)[3], col  = "red", lwd  = 2)
-abline(a = coef(mod_y2)[2] + coef(mod_y2)[1], b = coef(mod_y2)[3] + coef(mod_y2)[4], lwd  = 2)
-
-
-
 
 
 
@@ -63,23 +17,10 @@ mod_y3 <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "Me
 summary(mod_y3)
 
 
-plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], 
-     S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], 
-     xlim = c(0, 1),
-     ylim = c(20, 150), xlab = "", ylab = "")
-
-
-points(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")],
-       S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], col = "red")
-
-abline(a = coef(mod_y3)[1], b = coef(mod_y3)[3], col  = "red", lwd  = 2)
-abline(a = coef(mod_y3)[2] + coef(mod_y3)[1], b = coef(mod_y3)[3] + coef(mod_y3)[4], lwd  = 2)
 
 
 
-
-
-
+# FUGURE
 
 
 par(mfrow = c(2, 2), oma = c(5, 5, 2, 2))
