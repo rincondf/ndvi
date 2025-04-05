@@ -1,6 +1,6 @@
 require(stargazer)
 
-S_NDVI_alt <- read.csv(file = "S_NDVI_alt.csv")
+S_NDVI_alt <- read.csv(file = "Data/S_NDVI_alt.csv")
 
 
 mod_y <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "HiRain_Hard_SP")

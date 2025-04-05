@@ -1,6 +1,6 @@
 require(stargazer)
 
-S_NDRE_alt <- read.csv(file = "S_NDRE_alt.csv")
+S_NDRE_alt <- read.csv(file = "Data/S_NDRE_alt.csv")
 
 mod2_y <- lm(Yield ~ PLATFORM * NDRE, data = S_NDRE_alt, subset = Details == "HiRain_Hard_SP")
 summary(mod2_y)
