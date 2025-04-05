@@ -1,26 +1,39 @@
+require(stargazer)
+
+S_NDVI_alt <- read.csv(file = "S_NDVI_alt.csv")
+
 
 mod_y <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "HiRain_Hard_SP")
 summary(mod_y)
 
-
-
+stargazer(mod_y, type = "text", covariate.labels = c("PLATFORM", "NDVI", "PLATFORM:NDVI", "Intercept"),
+          title = "HiRain Hard SP")
+          
+          
 mod_y1 <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "HiRain_SWW_SP")
 summary(mod_y1)
 
 
-mod_y2 <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "Metribuzin_Trial_Spray")
+stargazer(mod_y1, type = "text", covariate.labels = c("PLATFORM", "NDVI", "PLATFORM:NDVI", "Intercept"),
+          title = "HiRain SWW SP")
+
+
+mod_y2 <- lm(formula = Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "Metribuzin_Trail_NoSpray")
 summary(mod_y2)
 
+stargazer(mod_y2, type = "text", covariate.labels = c("PLATFORM", "NDVI", "PLATFORM:NDVI", "Intercept"),
+          title = "Metribuzin Trial No Spray")
 
 
 mod_y3 <- lm(Yield ~ PLATFORM * NDVI, data = S_NDVI_alt, subset = Details == "Metribuzin_Trial_Spray")
 summary(mod_y3)
 
+stargazer(mod_y3, type = "text", covariate.labels = c("PLATFORM", "NDVI", "PLATFORM:NDVI", "Intercept"),
+          title = "Metribuzin Trial Spray")
 
 
 
-
-# FUGURE
+# FIGURE
 
 
 par(mfrow = c(2, 2), oma = c(5, 5, 2, 2))
@@ -241,11 +254,3 @@ lines(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "TAMU" & S_NDVI_alt$Details =
 
 title(xlab = "NDVI", cex.lab = 2, outer = TRUE)
 title(ylab = "Yield", cex.lab = 2, outer = TRUE)
-
-
-
-
-
-
-
-

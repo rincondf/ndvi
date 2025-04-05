@@ -1,27 +1,37 @@
+require(stargazer)
 
+S_NDRE_alt <- read.csv(file = "S_NDRE_alt.csv")
 
 mod2_y <- lm(Yield ~ PLATFORM * NDRE, data = S_NDRE_alt, subset = Details == "HiRain_Hard_SP")
 summary(mod2_y)
+
+stargazer(mod2_y, type = "text", covariate.labels = c("PLATFORM", "NDRE", "PLATFORM:NDRE", "Intercept"),
+          title = "HiRain Hard SP")
 
 
 mod2_y1 <- lm(Yield ~ PLATFORM * NDRE, data = S_NDRE_alt, subset = Details == "HiRain_SWW_SP")
 summary(mod2_y1)
 
+stargazer(mod2_y1, type = "text", covariate.labels = c("PLATFORM", "NDRE", "PLATFORM:NDRE", "Intercept"),
+          title = "HiRain SWW SP")
 
 
 mod2_y2 <- lm(Yield ~ PLATFORM * NDRE, data = S_NDRE_alt, subset = Details == "Metribuzin_Trial_Spray")
 summary(mod2_y2)
 
+stargazer(mod2_y2, type = "text", covariate.labels = c("PLATFORM", "NDRE", "PLATFORM:NDRE", "Intercept"),
+          title = "Metribuzin Trial No Spray")
 
 
-mod2_y3 <- lm(Yield ~ PLATFORM * NDRE, data = S_NDRE_alt, subset = Details == "Metribuzin_Trial_Spray")
+mod2_y3 <- lm(Yield ~ PLATFORM * NDRE, data = S_NDRE_alt, subset = Details == "Metribuzin_Trail_NoSpray")
 summary(mod2_y3)
 
+stargazer(mod2_y3, type = "text", covariate.labels = c("PLATFORM", "NDRE", "PLATFORM:NDRE", "Intercept"),
+          title = "Metribuzin Trial Spray")
 
 
 
-
-
+# FIGURE
 
 
 par(mfrow = c(2, 2), oma = c(5, 5, 2, 2))
@@ -242,5 +252,3 @@ lines(S_NDRE_alt$NDRE[which(S_NDRE_alt$PLATFORM == "TAMU" & S_NDRE_alt$Details =
 
 title(xlab = "NDRE", cex.lab = 2, outer = TRUE)
 title(ylab = "Yield", cex.lab = 2, outer = TRUE)
-
-
