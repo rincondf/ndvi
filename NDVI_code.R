@@ -43,7 +43,7 @@ par(mar = c(2, 2, 2, 2))
 plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_Hard_SP")], 
      S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_Hard_SP")], 
      xlim = c(0.3, 1),
-     ylim = c(20, 150), xlab = "", ylab = "", xaxt = "n", cex.axis = 1.8)
+     ylim = c(20, 150), xlab = "", ylab = "", xaxt = "n", cex.axis = 1.8, main = "HiRain_Hard_SP")
 
 axis(1, at = seq(0.3, 1, 0.1), labels = FALSE)
 
@@ -95,7 +95,8 @@ par(mar = c(2, 2, 2, 2))
 plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_SWW_SP")], 
      S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "HiRain_SWW_SP")], 
      xlim = c(0.3, 1),
-     ylim = c(20, 150), xlab = "", ylab = "", xaxt = "n", yaxt  = "n", cex.axis = 1.8)
+     ylim = c(20, 150), xlab = "", ylab = "", xaxt = "n", yaxt  = "n", cex.axis = 1.8,
+     main = "HiRain_SWW_SP")
 
 axis(1, at = seq(0.3, 1, 0.1), labels = FALSE)
 axis(2, at = seq(20, 150, 20), labels = FALSE)
@@ -149,7 +150,8 @@ par(mar = c(2, 2, 2, 2))
 plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trail_NoSpray")], 
      S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trail_NoSpray")], 
      xlim = c(0.3, 1),
-     ylim = c(20, 150), xlab = "", ylab = "", cex.axis = 1.8)
+     ylim = c(20, 150), xlab = "", ylab = "", cex.axis = 1.8,
+     main = "Metribuzin_Trail_NoSpray")
 
 axis(1, at = seq(0.3, 1, 0.1), labels = FALSE)
 
@@ -206,7 +208,8 @@ par(mar = c(2, 2, 2, 2))
 plot(S_NDVI_alt$NDVI[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], 
      S_NDVI_alt$Yield[which(S_NDVI_alt$PLATFORM == "WSU" & S_NDVI_alt$Details == "Metribuzin_Trial_Spray")], 
      xlim = c(0.3, 1),
-     ylim = c(20, 150), xlab = "", ylab = "", yaxt = "n", cex.axis = 1.8)
+     ylim = c(20, 150), xlab = "", ylab = "", yaxt = "n", cex.axis = 1.8,
+     main = "Metribuzin_Trial_Spray")
 
 axis(2, at = seq(20, 150, 20), labels = FALSE)
 
